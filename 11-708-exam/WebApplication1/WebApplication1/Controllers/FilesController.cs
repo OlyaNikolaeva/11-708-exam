@@ -48,5 +48,36 @@ namespace WebApplication1.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [HttpGet]
+        public IActionResult Info(int id)
+        {
+            try
+            {
+                return View(context.Files.First(x => x.Id == id));
+            }
+            catch
+            {
+                return RedirectToAction("Index", "Files");
+            }
+        }
+
+        [HttpGet]
+        public IActionResult Pull(int id)
+        {
+            var file = context.Files.First(x => x.Id == id);
+            return PhysicalFile(app.WebRootPath + file.Path, file.Type, file.Name);
+        }
+
+        [HttpGet]
+        public IActionResult Index()
+        {
+            List<FileIndex> model = new List<FileIndex>();
+            foreach (var file in context.Files)
+                model.Add(new FileIndex { Id = file.Id, Name = file.Name, ShortDesc = file.ShortDesc });
+
+            return View(model.AsEnumerable());
+        }
     }
+
 }
+
