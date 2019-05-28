@@ -8,13 +8,7 @@ namespace Exam2.Models
 {
     public class Order
     {
-        [Key]
         public string Id { get; set; }
-        public string UserId { get; set; }
-
-        public List<string> DishesId { get; set; }
-
-        public int Cost { get; set; }
-        public DateTime Time { get; set; }
+        public IEnumerable<Dishe> Dishes { get; set; }
     }
 }

@@ -8,15 +8,8 @@ namespace Exam2.Models
 {
     public class Basket
     {
-        [Key]
-        public string Id { get; set; }
-        public string UserId { get; set; }
-        public List<string> DishesId { get; private set; }
-        public int Cost { get; set; }
-        public void AddDish(Dishe dish)
-        {
-            DishesId.Add(dish.Id);
-            Cost += dish.Cost;
-        }
+        public int Id { get; set; }
+        public IEnumerable<Dishe> Dishes { get; set; }
+        public int TotalPrice { get; set; }
     }
 }

@@ -14,7 +14,9 @@ namespace Exam2.Controllers
         readonly RoleManager<IdentityRole> roleManager;
         readonly ApplicationDbContext context;
 
-        public AccountController(Microsoft.AspNetCore.Identity.UserManager<IdentityUser> userManager, Microsoft.AspNetCore.Identity.RoleManager<IdentityRole> roleManager, ApplicationDbContext context)
+        public AccountController(UserManager<IdentityUser> userManager,
+            RoleManager<IdentityRole> roleManager,
+            ApplicationDbContext context)
         {
             this.userManager = userManager;
             this.roleManager = roleManager;
@@ -31,12 +33,12 @@ namespace Exam2.Controllers
                 await roleManager.CreateAsync(new IdentityRole { Name = "user" });
             if (User.IsInRole("admin"))
             {
-                await userManager.RemoveFromRoleAsync(user, "user");
+                await userManager.RemoveFromRoleAsync(user, "admin");
                 await userManager.AddToRoleAsync(user, "user");
             }
             else
             {
-                await userManager.RemoveFromRoleAsync(user, "admin");
+                await userManager.RemoveFromRoleAsync(user, "user");
                 await userManager.AddToRoleAsync(user, "admin");
             }
             return RedirectToAction("Index", "Home");
