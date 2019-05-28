@@ -1,0 +1,10 @@
+﻿@model FileScr
+@{
+    ViewData["Title"] = "Info";
+}
+
+<h1>Info</h1>
+<h3>@Model.Name</h3><br />
+<label>@Model.ShortDesc</label><br />
+<label>@Model.Desc</label><br />
+<a href="~/File/Pull?id=@Model.Id">Pull</a>

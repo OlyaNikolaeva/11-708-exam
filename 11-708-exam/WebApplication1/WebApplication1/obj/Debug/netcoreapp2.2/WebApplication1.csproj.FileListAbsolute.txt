@@ -60,3 +60,5 @@ C:\Users\User\Desktop\git\11-708-exam\WebApplication1\WebApplication1\obj\Debug\
 C:\Users\User\Desktop\git\11-708-exam\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\WebApplication1.dll
 C:\Users\User\Desktop\git\11-708-exam\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\WebApplication1.pdb
 C:\Users\User\Desktop\git\11-708-exam\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\WebApplication1.csproj.CopyComplete
+C:\Users\User\Desktop\git\11-708-exam\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\Razor\Views\Files\Index.g.cshtml.cs
+C:\Users\User\Desktop\git\11-708-exam\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.2\Razor\Views\Files\Info.g.cshtml.cs
